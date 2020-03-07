@@ -5,6 +5,9 @@ COPY sources.list /etc/apt/sources.list
 RUN apt-get clean
 RUN apt-get update
 
+# 解决 debconf: unable to initialzie frontend: Dialog
+ENV DEBIAN_FRONTEND noninteractive
+
 # 配置系统语言环境和时区
 RUN apt-get install -y language-pack-zh-hant language-pack-zh-hans
 RUN echo 'export LANG=zh_CN.UTF-8' >> /etc/profile
