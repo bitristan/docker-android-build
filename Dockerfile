@@ -22,9 +22,9 @@ RUN apt-get update
 RUN apt-get install -y lib32z1 lib32ncurses5 lib32bz2-1.0
 
 # 安装源码所需编译工具
-RUN apt-get install -y gcc-multilib g++-multilib build-essential
-RUN apt-get install -y libesd0-dev libsdl1.2-dev libwxgtk2.8-dev libswitch-perl 
-RUN apt-get install -y libssl1.0.0 libssl-dev lib32readline-gplv2-dev libncurses5-dev
+RUN apt-get install -y git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib
+RUN apt-get install -y libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev python
+RUN apt-get install -y libx11-dev lib32z-dev libgl1-mesa-dev libxml2-utils xsltproc unzip
 
 # 配置java环境（这里使用openjdk-7）
 # 注：Android5.x - Android 6.0编译需要用jdk7，Android7.0及其以上需要用jdk8
